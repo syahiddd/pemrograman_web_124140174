@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cuaca Kampus ITERA</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="app-header">
+    <div class="container">
+      <h1>☁️ Cuaca Kampus ITERA</h1>
+      <p>Pantau cuaca kampus &amp; catat kondisi cuaca harian</p>
+    </div>
+  </header>
+
+  <main class="container layout">
+    <!-- ===== Kolom Kiri: Widget Cuaca + Form Catatan ===== -->
+    <div class="left-col">
+      <section class="card">
+        <div class="card-head">
+          <h2>Cuaca Saat Ini</h2>
+          <button type="button" id="refreshBtn" class="btn btn-light btn-sm">⟳ Refresh</button>
+        </div>
+        <div id="weatherBox">
+          <p class="empty">Memuat data cuaca...</p>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2 id="formTitle">Tambah Catatan Cuaca</h2>
+        <form id="noteForm" novalidate>
+          <div class="form-group">
+            <label for="noteDate">Tanggal</label>
+            <input type="date" id="noteDate" />
+          </div>
+
+          <div class="form-group">
+            <label for="noteCondition">Kondisi Cuaca</label>
+            <select id="noteCondition">
+              <option value="">-- Pilih kondisi --</option>
+              <option value="Cerah">☀️ Cerah</option>
+              <option value="Berawan">⛅ Berawan</option>
+              <option value="Berkabut">🌫️ Berkabut</option>
+              <option value="Hujan">🌧️ Hujan</option>
+              <option value="Badai Petir">⛈️ Badai Petir</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="noteTemp">Suhu (°C)</label>
+            <input type="number" id="noteTemp" placeholder="cth. 30" step="0.1" />
+          </div>
+
+          <div class="form-group">
+            <label for="noteText">Catatan <span class="hint">(opsional)</span></label>
+            <input type="text" id="noteText" placeholder="cth. Hujan deras pas pulang kuliah" autocomplete="off" />
+          </div>
+
+          <p class="error" id="formError"></p>
+
+          <button type="button" id="fillBtn" class="btn btn-light btn-block">🌤️ Isi dari Cuaca Sekarang</button>
+          <div class="form-actions">
+            <button type="submit" id="submitBtn" class="btn btn-primary">+ Simpan Catatan</button>
+            <button type="button" id="cancelBtn" class="btn btn-light" hidden>Batal</button>
+          </div>
+        </form>
+      </section>
+    </div>
+
+    <!-- ===== Kolom Kanan: Ringkasan + Daftar Catatan ===== -->
+    <div class="right-col">
+      <section class="card">
+        <h2>Ringkasan</h2>
+        <div class="summary" id="summaryBox"></div>
+      </section>
+
+      <section class="card">
+        <div class="card-head">
+          <h2>Riwayat Catatan Cuaca</h2>
+          <span class="badge" id="noteCount">0 catatan</span>
+        </div>
+        <ul class="note-list" id="noteList"></ul>
+      </section>
+    </div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Syahid Amanullah · 124140174 · Praktikum Pemrograman Aplikasi Web RA</p>
+  </footer>
+
+  <!-- type="module" agar bisa memakai import/export ES6 -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
