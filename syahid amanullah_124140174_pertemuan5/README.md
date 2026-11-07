@@ -40,31 +40,22 @@ python main.py
 
 Latihan dijalankan satu per satu, contoh: `python latihan/03_inheritance.py`.
 
-## Output (`python main.py`)
+## Screenshot Output
 
-Menunjukkan fitur penambahan, katalog, pencarian, dan status ketersediaan.
+Hasil `python main.py` pada folder `tugas_perpustakaan`.
 
-```
-=== 1. Tambah item ===
-Total koleksi: 3
+**1. Menambahkan item** — 2 buku dan 1 majalah ditambahkan ke koleksi.
 
-=== 2. Katalog tersedia ===
-[B01] Buku 'Python Dasar' oleh Guido - Tersedia
-[B02] Buku 'Pemrograman Web' oleh Budi - Tersedia
-[M01] Majalah 'Tech Weekly' edisi 42 - Tersedia
+![Tambah item](screenshots/1-tambah-item.png)
 
-=== 3. Pencarian ===
-Cari ID 'M01': [M01] Majalah 'Tech Weekly' edisi 42 - Tersedia
-Cari judul 'python': ["[B01] Buku 'Python Dasar' oleh Guido - Tersedia"]
+**2. Menampilkan katalog** — semua item yang tersedia.
 
-=== 4. Peminjaman & status ===
-Error: 'Python Dasar' sedang dipinjam
-[B02] Buku 'Pemrograman Web' oleh Budi - Tersedia
-[M01] Majalah 'Tech Weekly' edisi 42 - Tersedia
+![Katalog](screenshots/2-katalog.png)
 
-=== 5. Polymorphism: denda telat 3 hari ===
-Python Dasar: Rp3,000
-Tech Weekly: Rp1,500
-```
+**3. Pencarian** — berdasarkan ID (`M01`) dan judul (`python`).
 
-<!-- TODO: ganti blok output di atas dengan screenshot terminal (taruh di folder screenshots/) -->
+![Pencarian](screenshots/3-pencarian.png)
+
+**4. Status ketersediaan dan polymorphism** — buku yang dipinjam hilang dari daftar tersedia, meminjam ulang menghasilkan error, dan `hitung_denda()` berbeda tiap jenis item.
+
+![Peminjaman dan denda](screenshots/4-peminjaman-denda.png)
